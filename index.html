@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Build Diary</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Car Build Diary</h1>
+        <p>Your place to document the journey of your build.</p>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <img id="hero-image" src="images/hero.avif" alt="Car rendering">
+
+        <p id="hero-caption">
+            Photo render of the goal build.
+        </p>
+
+        <div id="hero-controls" class="form-section">
+            <h3>Customize Hero Image</h3>
+            <label>Image URL:
+                <input type="text" id="hero-image-input" placeholder="Paste an image URL here">
+            </label>
+            <button id="hero-update-btn">Set Hero Image</button>
+            <button id="hero-reset-btn">Reset To Default</button>
+            <button id="hero-remove-btn">Remove Image</button>
+        </div>
+    </section>
+
+    <!-- Build Story -->
+    <section id="build-story">
+        <h2>Build Story</h2>
+
+        <p id="build-story-text">
+            I originally bought this 1978 Camaro with my grandfather, who was a professional paint and body master. We planned to build this car together, but he passed away before we could begin. I am now building it in his honor. He was going to teach me the skill and art of the trade, but instead I am learning on my own with the help of YouTube and a lot of trial and error.
+
+            When I bought the car, it was a fully stripped-out shell with no paperwork. It was rust-free and a true Z28, so I took a chance on it. The first step was securing paperwork through a lien sale, and once that was done, it was all hands on deck to begin the build.
+
+            The car had been stored indoors in California for decades after being disassembled by a previous owner who intended to turn it into a drag racing car. He never got around to it, so he sold it to a local Oregonian who broke the cardinal rule: he didn’t get his wife’s permission first. So the Camaro sat once again until he finally sold it — and that’s when it became mine.
+        </p>
+
+        <div id="build-story-controls" class="form-section">
+            <h3>Edit Build Story</h3>
+            <label>New Story:
+                <textarea id="build-story-input"></textarea>
+            </label>
+            <button id="build-story-update-btn">Update Story</button>
+        </div>
+    </section>
+
+    <!-- Tabs Navigation -->
+    <nav id="tabs">
+        <button class="tab active" data-tab="progress">Progress Updates</button>
+        <button class="tab" data-tab="budget">Budget Tracker</button>
+        <button class="tab" data-tab="wishlist">Wish List</button>
+        <button class="tab" data-tab="gallery">Photo Gallery</button>
+    </nav>
+
+    <!-- Tab Content -->
+    <main>
+
+        <!-- PROGRESS TAB -->
+        <section id="progress" class="tab-content active">
+            <h2>Progress Updates</h2>
+
+            <div class="form-section">
+                <h3>Add a New Update</h3>
+                <label>Date:
+                    <input type="date" id="progress-date">
+                </label>
+                <label>Title:
+                    <input type="text" id="progress-title">
+                </label>
+                <label>Description:
+                    <textarea id="progress-description"></textarea>
+                </label>
+                <label>Image URL:
+                    <input type="text" id="progress-image">
+                </label>
+                <button id="add-progress-btn">Add Update</button>
+            </div>
+
+            <div id="progress-list"></div>
+        </section>
+
+        <!-- BUDGET TAB -->
+        <section id="budget" class="tab-content">
+            <h2>Budget Tracker</h2>
+
+            <div class="form-section">
+                <h3>Add Budget Item</h3>
+                <label>Category:
+                    <select id="budget-category">
+                        <option>Motor</option>
+                        <option>Transmission</option>
+                        <option>Suspension</option>
+                        <option>Body Work</option>
+                        <option>Interior</option>
+                        <option>Other</option>
+                    </select>
+                </label>
+                <label>Item:
+                    <input type="text" id="budget-item">
+                </label>
+                <label>Cost:
+                    <input type="number" id="budget-cost">
+                </label>
+                <button id="add-budget-btn">Add to Budget</button>
+            </div>
+
+            <h3>Budget Items</h3>
+            <table id="budget-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Item</th>
+                        <th>Cost</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            <div id="budget-totals"></div>
+        </section>
+
+        <!-- WISH LIST TAB -->
+        <section id="wishlist" class="tab-content">
+            <h2>Wish List</h2>
+
+            <div class="form-section">
+                <h3>Add Wish List Item</h3>
+                <label>Category:
+                    <select id="wishlist-category">
+                        <option>Motor</option>
+                        <option>Transmission</option>
+                        <option>Suspension</option>
+                        <option>Body Work</option>
+                        <option>Interior</option>
+                        <option>Other</option>
+                    </select>
+                </label>
+                <label>Item:
+                    <input type="text" id="wishlist-item">
+                </label>
+                <label>Estimated Cost:
+                    <input type="number" id="wishlist-cost">
+                </label>
+                <button id="add-wishlist-btn">Add to Wish List</button>
+            </div>
+
+            <h3>Wish List Items</h3>
+            <table id="wishlist-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Item</th>
+                        <th>Estimated Cost</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <!-- GALLERY TAB -->
+        <section id="gallery" class="tab-content">
+            <h2>Photo Gallery</h2>
+            <div id="gallery-grid"></div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
